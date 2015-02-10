@@ -1,18 +1,20 @@
 package server;
 
-import java.net.Socket;
+import java.io.IOException;
+import java.net.*;
 
 public class server {
 int PortNumber = 1111;
 	
 	
 	public void open_socket(){
-		Socket clientSocket = null;
+		ServerSocket MyService;
 		try{
-			serviceSocket = MyService.accept();
+			MyService = new ServerSocket(PortNumber);
 		}
 		catch(IOException e) {
 			System.out.println(e);
 		}
 	}
+	public void 
 }

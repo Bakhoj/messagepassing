@@ -49,5 +49,15 @@ PrintStream output;
 		}
 	}
 */
+	public void close_socket() {
+		try {
+			output.close();
+			input.close();
+		MyClient.close();
+		}
+		catch(IOException e){
+			System.out.println(e);
+		}
+	}
 
 }

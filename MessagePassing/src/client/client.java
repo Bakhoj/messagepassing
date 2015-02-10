@@ -4,6 +4,7 @@ import java.io.DataInputStream;
 import java.io.IOException;
 import java.net.*;
 import java.io.*;
+import client.TemperatureGenerator;
 
 public class client {
 int PortNumber = 1111;

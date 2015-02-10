@@ -49,4 +49,17 @@ PrintStream output;
 			System.out.println(e);
 		}
 	}
+	
+	public void close_socket(){
+		try{
+			output.close();
+			input.close();
+			serviceSocket.close();
+			MyService.close();
+			
+		}
+		catch(IOException e){
+			System.out.println(e);
+		}
+	}
 }

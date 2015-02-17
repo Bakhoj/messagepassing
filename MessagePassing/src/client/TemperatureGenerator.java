@@ -2,7 +2,8 @@ package client;
 
 import java.util.*;
 
-// used http://www.javapractices.com/topic/TopicAction.do?Id=62 but changed to our use
+// used http://www.javapractices.com/topic/TopicAction.do?Id=62 
+// but changed to be used in our program
 
 public class TemperatureGenerator {
 	final int RANGE_START = 14;

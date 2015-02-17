@@ -5,7 +5,7 @@ import server.server;
 
 public class ServerRunner {
 	server server = new server();
-	
+	int read = 0;
 	public void run(){
 		server.open_socket();
 		server.input_stream();
@@ -23,6 +23,11 @@ public class ServerRunner {
 	}
 	
 	public void temp_method(){
-		server.input.
+		try{
+			read = server.input.readByte();
+		}
+		catch(IOException e){
+			System.out.println(e);
+		}
 	}
 }

@@ -1,6 +1,6 @@
 import java.io.IOException;
 
-public class Run {
+public class RunServer {
 	public static void main(String[] args) throws IOException{
 		
 	}

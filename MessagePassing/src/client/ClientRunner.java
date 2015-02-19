@@ -26,7 +26,7 @@ public class ClientRunner {
 		if(read_from_kb.equals("") && program_start){
 			temp = tempGen.temperatureGen();
 			client.output.write(temp);
-			System.out.println(temp);
+			System.out.println("the temperature is" + temp + "degrees celcius");
 		}
 		
 		if(read_from_kb.equals("c") && program_start){

@@ -9,7 +9,7 @@ public class server {
 int PortNumber = 1111;
 ServerSocket MyService;
 Socket clientSocket = null;
-Socket serviceSocket;
+//Socket serviceSocket;
 DataInputStream input;
 PrintStream output;
 //DataOutputStream output;
@@ -25,7 +25,7 @@ PrintStream output;
 	
 	public void client_connect(){
 		try{
-			serviceSocket = MyService.accept();
+			clientSocket = MyService.accept();
 		}
 		catch(IOException e){
 			System.out.println(e);
@@ -34,7 +34,7 @@ PrintStream output;
 	
 	public void input_stream(){
 		try{
-			input = new DataInputStream(serviceSocket.getInputStream());
+			input = new DataInputStream(clientSocket.getInputStream());
 		}
 		catch(IOException e){
 			System.out.println(e);
@@ -43,7 +43,7 @@ PrintStream output;
 	
 	public void output_stream(){
 		try{
-			output = new PrintStream(serviceSocket.getOutputStream());
+			output = new PrintStream(clientSocket.getOutputStream());
 		}
 		catch(IOException e){
 			System.out.println(e);
@@ -54,7 +54,7 @@ PrintStream output;
 		try{
 			output.close();
 			input.close();
-			serviceSocket.close();
+			clientSocket.close();
 			MyService.close();
 			
 		}

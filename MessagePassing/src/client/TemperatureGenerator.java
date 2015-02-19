@@ -13,7 +13,6 @@ public class TemperatureGenerator {
 	public int temperatureGen(){
 		Random randomGenerator = new Random();
 		getRandomInt(RANGE_START, RANGE_END, randomGenerator);
-		System.out.println(tempGen);
 		return tempGen;
 	}
 	

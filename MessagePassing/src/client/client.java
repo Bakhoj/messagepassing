@@ -14,7 +14,7 @@ PrintStream output;
 
 	public void open_socket(){
 		try{
-			MyClient = new Socket("Machine name", PortNumber);
+			MyClient = new Socket("Bæk-Studie", PortNumber);
 		}
 		catch(IOException e){
 			System.out.println(e);

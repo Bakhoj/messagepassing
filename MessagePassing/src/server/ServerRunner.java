@@ -13,16 +13,17 @@ public class ServerRunner {
 	
 	public void run(){
 		server.open_socket();
-		System.out.println("1");
+		System.out.println("Server started");
 		server.client_connect();
 		server.input_stream();
 		server.output_stream();
-		System.out.println("hej2");
+		System.out.println("Connected to client");
 		
 		while(true){
 			if(available() >0){
 				temp_method();
 				if(read == -1){
+					System.err.println("Server closed");
 					server.close_socket();
 					break;
 				}
@@ -59,6 +60,6 @@ public class ServerRunner {
 	
 	public void calc_avg(){
 		avg = (sum/amount);
-		System.out.printf("The average temperatur is: %.2f. \n", avg);
+		System.out.printf("The average temperatur is: %.2f \260" + "C \n", avg);
 	}
 }

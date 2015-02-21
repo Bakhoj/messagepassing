@@ -7,6 +7,8 @@ import java.io.*;
 
 public class client {
 int PortNumber = 1111;
+String machine_Name1 = "Lars-Bærbar";
+String machine_Name2 = "Bæk-Studie";
 Socket MyClient;
 DataInputStream input;
 PrintStream output;
@@ -14,7 +16,9 @@ PrintStream output;
 
 	public void open_socket(){
 		try{
-			MyClient = new Socket("B�k-Studie", PortNumber);
+			// is machine_Name1 chosen - LP's com
+			// is machine_Name2 chosen - Bæk's com
+			MyClient = new Socket(machine_Name1, PortNumber);
 		}
 		catch(IOException e){
 			System.out.println(e);

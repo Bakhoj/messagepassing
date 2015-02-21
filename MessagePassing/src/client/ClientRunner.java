@@ -1,11 +1,8 @@
 package client;
 
-import java.io.*;
 import java.util.Scanner;
-import java.net.*;
 import client.client;
 import client.TemperatureGenerator;
-
 
 public class ClientRunner {
 	client client = new client();
@@ -24,14 +21,12 @@ public class ClientRunner {
 				client.output_stream();
 				System.out.println("program startet");
 				program_start = true;
-//				read_from_kb = null;
 			}
 			
 			else if(read_from_kb.equals("") && program_start){
 				temp = tempGen.temperatureGen();
 				client.output.write(temp);
 				System.out.println("the temperature is " + temp + " degrees celcius");
-//				read_from_kb = null;
 			}
 			
 			else if(read_from_kb.equals("c") && program_start){
@@ -39,7 +34,6 @@ public class ClientRunner {
 				client.close_socket();
 				program_start = false;
 				System.out.println("program closed");
-//				read_from_kb = null;
 				break;
 			}
 		}

@@ -18,7 +18,7 @@ PrintStream output;
 		try{
 			// is machine_Name1 chosen - LP's com
 			// is machine_Name2 chosen - Bæk's com
-			MyClient = new Socket(machine_Name1, PortNumber);
+			MyClient = new Socket(machine_Name2, PortNumber);
 		}
 		catch(IOException e){
 			System.out.println(e);

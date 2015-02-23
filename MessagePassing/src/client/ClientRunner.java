@@ -20,21 +20,21 @@ public class ClientRunner {
 				client.open_socket();
 				client.input_stream();
 				client.output_stream();
-				System.out.println("program startet");
+				System.out.print("program startet");
 				program_start = true;
 			}
 			
 			else if(read_from_kb.equals("") && program_start){
 				temp = tempGen.temperatureGen();
 				client.output.write(temp);
-				System.out.println("the temperature is " + temp + " \260" +"C");
+				System.out.print("the temperature is " + temp + " \260" +"C");
 			}
 			
 			else if(read_from_kb.equals("c") && program_start){
 				client.output.write(-1);
 				client.close_socket();
 				program_start = false;
-				System.err.println("program closed");
+				System.err.println("program and server terminated");
 				break;
 			}
 		}

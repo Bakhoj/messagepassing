@@ -22,7 +22,7 @@ public class ServerRunner {
 			if(available() >0){
 				temp_method();
 				if(read == -1){
-					System.err.println("Server closed");
+					System.err.println("Server terminated");
 					server.close_socket();
 					break;
 				}

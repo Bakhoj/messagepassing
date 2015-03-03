@@ -2,7 +2,7 @@ package server;
 import java.io.*;
 
 import server.server;
-
+// Anders laver en masse så server har masser og masser af threads.
 public class ServerRunner {
 	server server = new server();
 	int read = 0;

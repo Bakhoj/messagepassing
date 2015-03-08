@@ -24,10 +24,11 @@ public class ClientRunner {
 				program_start = true;
 			
 					while (program_start){
+						
+					if(read_from_kb.equals("u")){
 						temp = tempGen.temperatureGen();
 						client.output.write(temp);
 						System.out.print("the temperature is " + temp + " \260" +"C");
-					if(read_from_kb.equals("u")){
 					//get avg
 					}
 					else if (read_from_kb.equals("c")){

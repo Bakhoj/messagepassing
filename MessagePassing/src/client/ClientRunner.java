@@ -1,6 +1,8 @@
 package client;
 
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
+
 import client.client;
 import client.TemperatureGenerator;
 // LP laver noget på client, så den connecter igen og igen og igen og igen.
@@ -25,12 +27,14 @@ public class ClientRunner {
 			
 					while (program_start){
 						
-					if(read_from_kb.equals("u")){
 						temp = tempGen.temperatureGen();
 						client.output.write(temp);
 						System.out.print("the temperature is " + temp + " \260" +"C");
-					//get avg
+
+					if(read_from_kb.equals("u")){
+						//get avg
 					}
+					
 					else if (read_from_kb.equals("c")){
 						client.output.write(-1);
 						client.close_socket();
@@ -38,6 +42,11 @@ public class ClientRunner {
 						System.err.println("program and server terminated");
 						break;
 						
+					}
+					try {
+						TimeUnit.MILLISECONDS.sleep(500);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
 					}
 				}
 			}

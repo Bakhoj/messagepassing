@@ -36,6 +36,7 @@ public class ClientRunner {
 						program_start = false;
 						System.err.println("program and server terminated");
 						break;
+						
 					}
 				}
 			}

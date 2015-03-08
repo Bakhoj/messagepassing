@@ -7,6 +7,7 @@ public class client {
 int PortNumber = 1111;
 String machine_Name1 = "Lars-Bærbar";
 String machine_Name2 = "Bæk-Studie";
+String machine_Name3 = "Gamer-Bæk";
 Socket MyClient;
 DataInputStream input;
 PrintStream output;
@@ -16,7 +17,7 @@ PrintStream output;
 		try{
 			// is machine_Name1 chosen - LP's com
 			// is machine_Name2 chosen - Bæk's com
-			MyClient = new Socket(machine_Name2, PortNumber);
+			MyClient = new Socket(machine_Name3, PortNumber);
 		}
 		catch(IOException e){
 			System.out.println(e);

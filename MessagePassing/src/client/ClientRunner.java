@@ -3,6 +3,9 @@ package client;
 import java.util.Scanner;
 import client.client;
 import client.TemperatureGenerator;
+import java.io.Serializable;
+import compute.Task;
+
 // LP laver noget på client, så den connecter igen og igen og igen og igen.
 public class ClientRunner {
 	client client = new client();

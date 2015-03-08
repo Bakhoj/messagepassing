@@ -1,7 +1,13 @@
 package server;
 
 import java.net.*;
+import java.rmi.RemoteException;
+import java.util.concurrent.ThreadPoolExecutor;
 import java.io.*;
+
+import compute.ComputeEngine;
+import compute.Compute;
+import compute.Task;
 
 public class server {
 int PortNumber = 1111;
@@ -12,6 +18,13 @@ DataInputStream input;
 PrintStream output;
 //DataOutputStream output;
 
+//##############################
+//Playing with RMI
+ComputeEngine thread = new ComputeEngine();
+	
+
+	ComputeEngine.executeTask(MyService = new ServerSocket(PortNumber));
+//##############################
 	public void open_socket(){
 		try{
 			MyService = new ServerSocket(PortNumber);

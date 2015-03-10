@@ -1,14 +1,29 @@
 package server;
 import java.io.*;
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 
+import compute.ComputeEngine;
 import server.server;
 // Anders laver en masse så server har masser og masser af threads.
-public class ServerRunner {
+public class ServerRunner extends UnicastRemoteObject{
+	protected ServerRunner() throws RemoteException {
+		super();
+	}
+
+	private static final long serialVersionUID = 1L;
 	server server = new server();
 	int read = 0;
 	double sum = 0;
 	double amount = 0;
 	double avg = 0;
+	
+	//##############################
+	//Playing with RMI
+	ComputeEngine thread = new ComputeEngine();
+
+		int i = thread.run1();
+	//##############################
 	
 	public void run(){
 		server.open_socket();
@@ -60,5 +75,9 @@ public class ServerRunner {
 	public void calc_avg(){
 		avg = (sum/amount);
 		System.out.printf("The average temperatur is: %.2f \260" + "C \n", avg);
+	}
+	
+	public double get_avg(){
+		return avg;
 	}
 }

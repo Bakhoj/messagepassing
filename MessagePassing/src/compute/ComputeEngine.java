@@ -17,6 +17,25 @@ public class ComputeEngine implements Compute{
 		return t.execute();
 	}
 	
+	public int run1(){
+		if(System.getSecurityManager() == null){
+			System.setSecurityManager(new SecurityManager());
+		}
+		try{
+			String name = "run1";
+			Compute engine = new ComputeEngine();
+			Compute stub = (Compute) UnicastRemoteObject.exportObject(engine, 0);
+			Registry registry = LocateRegistry.getRegistry();
+			registry.rebind(name, stub);
+			System.out.println("ComputeEngine bound");
+		} catch (Exception e) {
+			System.out.println("ComputeEngine exception");
+			e.printStackTrace();
+		}
+
+		return 0;
+	}
+	
 	public static void main(String[] args){
 		if(System.getSecurityManager() == null){
 			System.setSecurityManager(new SecurityManager());

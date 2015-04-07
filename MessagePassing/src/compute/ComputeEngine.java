@@ -5,10 +5,10 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 
-import compute.Compute;
+import compute.ComputeSensor;
 import compute.Task;
 
-public class ComputeEngine implements Compute{
+public class ComputeEngine implements ComputeSensor{
 	public ComputeEngine() {
 		super();
 	}
@@ -18,13 +18,10 @@ public class ComputeEngine implements Compute{
 	}
 	
 	public int run1(){
-		if(System.getSecurityManager() == null){
-			System.setSecurityManager(new SecurityManager());
-		}
 		try{
 			String name = "run1";
-			Compute engine = new ComputeEngine();
-			Compute stub = (Compute) UnicastRemoteObject.exportObject(engine, 0);
+			ComputeSensor engine = new ComputeEngine();
+			ComputeSensor stub = (ComputeSensor) UnicastRemoteObject.exportObject(engine, 0);
 			Registry registry = LocateRegistry.getRegistry();
 			registry.rebind(name, stub);
 			System.out.println("ComputeEngine bound");
@@ -42,8 +39,8 @@ public class ComputeEngine implements Compute{
 		}
 		try{
 			String name = "Compute";
-			Compute engine = new ComputeEngine();
-			Compute stub = (Compute) UnicastRemoteObject.exportObject(engine, 0);
+			ComputeSensor engine = new ComputeEngine();
+			ComputeSensor stub = (ComputeSensor) UnicastRemoteObject.exportObject(engine, 0);
 			Registry registry = LocateRegistry.getRegistry();
 			registry.rebind(name, stub);
 			System.out.println("ComputeEngine bound");

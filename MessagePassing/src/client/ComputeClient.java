@@ -2,17 +2,14 @@ package client;
 
 	import java.rmi.registry.LocateRegistry;
 	import java.rmi.registry.Registry;
-	import compute.Compute;
-	
+	import compute.ComputeSensor;
+	import static server.ServerNew.RMISENSOR;
 public class ComputeClient {
 	public static void main (String args[]){
-		if (System.getSecurityManager() == null) {
-	        System.setSecurityManager(new SecurityManager());
-    	}
 		try {
-            String name = "Compute";
+            String name = RMISENSOR;
             Registry registry = LocateRegistry.getRegistry(args[0]);
-            Compute comp = (Compute) registry.lookup(name);
+            ComputeSensor comp = (ComputeSensor) registry.lookup(name);
             TemperatureGenerator task = new TemperatureGenerator();
             int temp = comp.executeTask(task);
             System.out.println(temp);
